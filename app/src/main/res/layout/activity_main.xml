@@ -7,13 +7,58 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scaleType="fillCenter" />
+
+    <com.luckyfriday.cameramlkit.custom.CustomGraphicOverlay
+        android:id="@+id/customOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/iv_emotion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/txt_emotion"
+        tools:src="@drawable/ic_nope" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/button_stop_camera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center|bottom"
+            android:contentDescription="@string/txt_stop_camera"
+            android:src="@drawable/item_stop_camera"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/button_start_camera"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center|bottom"
+            android:contentDescription="@string/txt_start_camera"
+            android:src="@drawable/item_start_camera" />
+
+        <ImageView
+            android:id="@+id/button_turn_camera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginEnd="50dp"
+            android:contentDescription="@string/txt_turn_camera"
+            android:src="@drawable/ic_rotate" />
+
+    </FrameLayout>
 
 </FrameLayout>

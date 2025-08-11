@@ -1,4 +1,4 @@
-package com.luckyfriday.cameramlkit.cutom
+package com.luckyfriday.cameramlkit.custom
 
 import android.content.Context
 import android.graphics.Canvas

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Camera ML Kit</string>
+    <string name="txt_emotion">Emotion</string>
+    <string name="txt_stop_camera">Stop Camera</string>
+    <string name="txt_start_camera">Start Camera</string>
+    <string name="txt_turn_camera">Turn Camera</string>
 </resources>
