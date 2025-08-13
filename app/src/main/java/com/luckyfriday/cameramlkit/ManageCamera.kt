@@ -38,6 +38,7 @@ class ManageCamera(
             {
                 cameraProvider = cameraProcessProvider.get()
                 preview = Preview.Builder().build()
+                cameraAnalyzer = CameraAnalyzer(customGraphicOverlay)
                 cameraAnalyzer.setEmotionListener(emotionListener)
                 imageAnalysis = ImageAnalysis.Builder()
                     .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
