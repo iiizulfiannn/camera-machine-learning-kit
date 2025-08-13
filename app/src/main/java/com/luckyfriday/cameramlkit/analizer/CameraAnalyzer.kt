@@ -10,7 +10,7 @@ import com.google.mlkit.vision.face.FaceDetectorOptions
 import com.luckyfriday.cameramlkit.custom.CustomGraphicOverlay
 import com.luckyfriday.cameramlkit.custom.RectangleOverlay
 
-class CameraAnalizer(private val overlay: CustomGraphicOverlay<*>) :
+class CameraAnalyzer(private val overlay: CustomGraphicOverlay<*>) :
     BaseCameraAnalyzer<List<Face>>() {
     override val customGraphicOverlay: CustomGraphicOverlay<*>
         get() = overlay

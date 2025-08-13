@@ -10,11 +10,10 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
-import com.luckyfriday.cameramlkit.analizer.CameraAnalizer
+import com.luckyfriday.cameramlkit.analizer.CameraAnalyzer
 import com.luckyfriday.cameramlkit.analizer.EmotionListener
 import com.luckyfriday.cameramlkit.custom.CameraUtils
 import com.luckyfriday.cameramlkit.custom.CustomGraphicOverlay
-import java.util.concurrent.Executor
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -30,7 +29,7 @@ class ManageCamera(
     private lateinit var preview: Preview
     private lateinit var imageAnalysis: ImageAnalysis
     private lateinit var camera: Camera
-    private lateinit var cameraAnalyzer: CameraAnalizer
+    private lateinit var cameraAnalyzer: CameraAnalyzer
     private var cameraExecutorService: ExecutorService = Executors.newSingleThreadExecutor()
 
     fun cameraStart() {
@@ -77,12 +76,13 @@ class ManageCamera(
 
     fun changeCamera() {
         cameraStop()
-        cameraOptions = if (cameraOptions == CameraSelector.LENS_FACING_BACK) CameraSelector.LENS_FACING_FRONT else CameraSelector.LENS_FACING_BACK
+        cameraOptions =
+            if (cameraOptions == CameraSelector.LENS_FACING_BACK) CameraSelector.LENS_FACING_FRONT else CameraSelector.LENS_FACING_BACK
         CameraUtils.toggleSelector()
         cameraStart()
     }
 
-    private fun cameraStop() {
+    fun cameraStop() {
         cameraProvider.unbindAll()
     }
 
